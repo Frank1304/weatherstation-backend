@@ -7,18 +7,20 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "dht22")
-public class DHT22Sensor {
+public class DHT22SensorData {
 
     private long id;
-    private String timestamp;
+    private LocalDateTime timestamp;
     private double humidity;
     private double temperature;
 
-    public DHT22Sensor() {}
+    public DHT22SensorData() {}
 
-    public DHT22Sensor(String timestamp, double humidity, double temperature) {
+    public DHT22SensorData(LocalDateTime timestamp, double humidity, double temperature) {
         this.timestamp = timestamp;
         this.humidity = humidity;
         this.temperature = temperature;
@@ -33,9 +35,13 @@ public class DHT22Sensor {
         this.id = id;
     }
 
-    @Column(name = "timestamp", nullable = false)
-    public String getTimestamp() {
+    @Column(name = "timestamp", columnDefinition = "TIMESTAMP", nullable = false)
+    public LocalDateTime getTimestamp() {
         return timestamp;
+    }
+
+    public void setTimestamp(LocalDateTime timestmap){
+        this.timestamp = timestmap;
     }
 
     @Column(name = "humidity", nullable = false)
@@ -43,8 +49,16 @@ public class DHT22Sensor {
         return humidity;
     }
 
+    public void setHumidity(double humidity) {
+        this.humidity = humidity;
+    }
+
     @Column(name = "temperature", nullable = false)
     public double getTemperature() {
         return temperature;
+    }
+
+    public void setTemperature(double temperature) {
+        this.temperature = temperature;
     }
 }
