@@ -2,11 +2,11 @@ package com.weatherstationbackend.weatherstationbackend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class WeatherstationBackendApplication {
-
-	public static void main(String[] args) {
+public class WeatherstationBackendApplication extends SpringBootServletInitializer {
+		public static void main(String[] args) {
 		SpringApplication.run(WeatherstationBackendApplication.class, args);
 	}
 
