@@ -1,4 +1,4 @@
-package com.weatherstationbackend.weatherstationbackend.exception;
+package com.weatherstationbackend.weatherstationbackend.shared.exception;
 
 import java.util.Date;
 
